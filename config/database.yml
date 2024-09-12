@@ -26,8 +26,6 @@ test:
   username: <%= ENV["DEVELOPMENT_DATABASE_USERNAME"] %>
   password: <%= ENV["DEVELOPMENT_DATABASE_PASSWORD"] %>
 
-
-
 # SQLite3 write its data on the local filesystem, as such it requires
 # persistent disks. If you are deploying to a managed service, you should
 # make sure it provides disk persistence, as many don't.
