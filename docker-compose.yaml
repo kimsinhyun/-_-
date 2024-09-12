@@ -1,0 +1,53 @@
+version: '3.9'
+
+services:
+  postgresql:
+    build:
+      context: .
+      dockerfile: ./dockers/postgres.Dockerfile
+    environment:
+      - POSTGRESQL_REPLICATION_MODE=master
+      - POSTGRESQL_REPLICATION_USER=repl_user
+      - POSTGRESQL_REPLICATION_PASSWORD=repl_password
+      - POSTGRESQL_POSTGRES_PASSWORD=mori # root password
+      - POSTGRESQL_USERNAME=mori
+      - POSTGRESQL_PASSWORD=mori
+
+    volumes:
+      - postgres_data:/bitnami/postgresql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U fenrir -d fenrir" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+#  local-db-replica:
+#    build:
+#      context: .
+#      dockerfile: ./dockers/postgres.Dockerfile
+#    ports:
+#      - "5433:5432"
+#    restart: on-failure
+#    depends_on:
+#      - local-db
+#    environment:
+#      - POSTGRESQL_REPLICATION_MODE=slave
+#      - POSTGRESQL_REPLICATION_USER=repl_user
+#      - POSTGRESQL_REPLICATION_PASSWORD=repl_password
+#      - POSTGRESQL_MASTER_HOST=local-db
+#      - POSTGRESQL_MASTER_PORT_NUMBER=5432
+#      - POSTGRESQL_POSTGRES_PASSWORD=fenrir
+#      - POSTGRESQL_PASSWORD=fenrir
+#      - POSTGRESQL_DATABASE=fenrir
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready -U fenrir -d fenrir" ]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 5
+
+volumes:
+  redis:
+  postgres_data:
+
