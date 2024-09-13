@@ -1,0 +1,6 @@
+.left-top-panel {
+    @apply
+    bg-gray-700 flex justify-center items-center
+    lg:w-1/2 lg:h-full
+    w-full h-1/2;
+}
