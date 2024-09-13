@@ -1,7 +1,66 @@
 .left-top-panel {
     @apply
     bg-gray-700 flex justify-center items-center
-    lg:w-1/2 lg:h-full
-    w-full h-1/2;
+    md:w-2/3 md:h-full
+    w-full h-2/5;
 }
 
+.right-bottom-panel {
+    @apply
+    p-10 flex flex-col justify-center
+    md:w-1/3 md:h-full
+    w-full h-3/5;
+}
+
+.field {
+    @apply mb-5 w-full;
+}
+
+.submit-btn {
+    @apply flex flex-row justify-center items-center
+    bg-gray-600 hover:bg-gray-700 font-bold text-white
+    my-2
+    py-2 px-4;
+}
+
+.other-btn {
+    @apply flex flex-row justify-center items-center
+    bg-gray-400 hover:bg-gray-500 font-bold text-white
+    my-2
+    py-2 px-4;
+}
+
+.google-icon-btn {
+    @apply flex items-center justify-center bg-red-500 text-white rounded-full w-12 h-12 mx-auto; /* Adjust size and spacing as needed */
+}
+
+.login-logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: 1em;
+    height: auto;
+    image-rendering: crisp-edges;
+    border-radius: 50%; /* 원형 이미지 */
+}
+
+.separator {
+    @apply flex items-center justify-center w-full;
+}
+
+.separator::before,
+.separator::after {
+    @apply border-t border-gray-300 flex-grow mx-2;
+    content: "";
+}
+
+.separator-text {
+    @apply text-gray-500;
+}
+
+.google-icon-btn {
+    @apply flex items-center justify-center bg-red-500 text-white rounded-full w-12 h-12 mx-auto; /* Adjust size and spacing as needed */
+}
+
+/*.login-logo:hover {*/
+/*    transform: scale(1.1); !* 호버 시 약간 확대 *!*/
+/*}*/

@@ -53,6 +53,9 @@ gem "omniauth-rails_csrf_protection", "~> 1.0", ">= 1.0.2"
 # redis
 gem 'redis', '>= 4.0.1'
 gem 'redis-rails', '~> 5.0', '>= 5.0.2'
+gem 'redis-session-store',"~> 0.11.5"
+
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

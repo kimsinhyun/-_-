@@ -118,6 +118,8 @@ GEM
       logger
     faraday-net_http (3.1.0)
       net-http
+    font-awesome-rails (4.7.0.8)
+      railties (>= 3.2, < 8.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hashie (5.0.0)
@@ -277,6 +279,9 @@ GEM
       redis-actionpack (>= 5.0, < 6)
       redis-activesupport (>= 5.0, < 6)
       redis-store (>= 1.2, < 2)
+    redis-session-store (0.11.5)
+      actionpack (>= 6, < 8)
+      redis (>= 3, < 6)
     redis-store (1.10.0)
       redis (>= 4, < 6)
     regexp_parser (2.9.2)
@@ -410,6 +415,7 @@ DEPENDENCIES
   devise (~> 4.9, >= 4.9.4)
   devise-i18n (~> 1.12, >= 1.12.1)
   dotenv-rails
+  font-awesome-rails (~> 4.7, >= 4.7.0.8)
   importmap-rails
   jbuilder
   omniauth (~> 2.1, >= 2.1.1)
@@ -421,6 +427,7 @@ DEPENDENCIES
   rails-i18n (~> 7.0.0)
   redis (>= 4.0.1)
   redis-rails (~> 5.0, >= 5.0.2)
+  redis-session-store (~> 0.11.5)
   rubocop-rails-omakase
   selenium-webdriver
   sprockets-rails
