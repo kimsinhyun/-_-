@@ -35,9 +35,16 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # database
-gem 'pg', '~> 1.5', '>= 1.5.8'
+gem "pg", "~> 1.5", ">= 1.5.8"
 
 gem "tailwindcss-rails", "~> 2.7"
+
+# authentication
+gem "devise", "~> 4.9", ">= 4.9.4"
+gem "omniauth", "~> 2.1", ">= 2.1.1"
+gem "omniauth-google-oauth2", "~> 1.1", ">= 1.1.1"
+gem "omniauth-rails_csrf_protection", "~> 1.0", ">= 1.0.2"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
