@@ -37,10 +37,15 @@ gem "bootsnap", require: false
 # database
 gem "pg", "~> 1.5", ">= 1.5.8"
 
+# css framework
 gem "tailwindcss-rails", "~> 2.7"
+
+# localization
+gem 'rails-i18n', '~> 7.0.0'
 
 # authentication
 gem "devise", "~> 4.9", ">= 4.9.4"
+gem 'devise-i18n', '~> 1.12', '>= 1.12.1'
 gem "omniauth", "~> 2.1", ">= 2.1.1"
 gem "omniauth-google-oauth2", "~> 1.1", ">= 1.1.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0", ">= 1.0.2"
