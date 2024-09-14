@@ -27,8 +27,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_09_14_052306) do
     t.text "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "chat_room_id_id"
-    t.index ["chat_room_id_id"], name: "index_chats_on_chat_room_id_id"
+    t.bigint "chat_room_id"
+    t.index ["chat_room_id"], name: "index_chats_on_chat_room_id"
     t.index ["user_id"], name: "index_chats_on_user_id"
   end
 

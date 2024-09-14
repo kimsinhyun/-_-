@@ -59,6 +59,10 @@ gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
 gem "view_component", "~> 3.14"
 
+gem "sidekiq", "~> 7.3"
+gem "sidekiq-cron", "~> 1.12"
+gem "sidekiq-unique-jobs", "~> 8.0", ">= 8.0.2"
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
@@ -91,5 +95,6 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-end
 
+  gem "rspec-sidekiq", "~> 4.1"
+end

@@ -7,6 +7,6 @@ class CreateChatRooms < ActiveRecord::Migration[7.2]
       t.timestamps
     end
 
-    add_reference :chats, :chat_room_id
+    add_reference :chats, :chat_room
   end
 end

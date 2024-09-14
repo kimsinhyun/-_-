@@ -1,4 +1,13 @@
+require 'sidekiq/web'
+require 'sidekiq/cron/web'
+require 'sidekiq_unique_jobs/web'
+
 Rails.application.routes.draw do
+
+  # authenticate :admin_user do
+  mount Sidekiq::Web => '/sidekiq'
+  # end
+
   devise_for :users,
              path: "",
              path_names: {

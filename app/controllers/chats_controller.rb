@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class ChatsController < ApplicationController
-  before_action :set_chat_room, only: %i[show]
+  before_action :set_chat_room, only: %i[create]
 
   def create
     @chat = Chat.new(chat_params)

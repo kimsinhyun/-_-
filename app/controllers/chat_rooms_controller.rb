@@ -9,12 +9,12 @@ class ChatRoomsController < ApplicationController
   end
 
   def show
-    @chat_messages = @chat_room.chats.includes(:user)
+    @chat_room
   end
 
   private
 
   def set_chat_room
-    @chat_room = ChatRoom.find(params[:id])
+    @chat_room = ChatRoom.includes(chats: :user).find(params[:id])
   end
 end
