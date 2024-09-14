@@ -1,0 +1,4 @@
+<div class="message" id="message-<%= @chat.id %>">
+  <p><strong><%= @chat.user.name %>:</strong> <%= @chat.content %></p>
+  <small><%= @chat.created_at.strftime("%H:%M") %></small>
+</div>

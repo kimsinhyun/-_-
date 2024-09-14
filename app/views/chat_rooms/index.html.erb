@@ -1,0 +1,4 @@
+<% @chat_rooms.each do |chat_room| %>
+  <h1><%= chat_room.title %></h1>
+  <%= link_to 'Join', chat_room_path(chat_room) %>
+<% end %>

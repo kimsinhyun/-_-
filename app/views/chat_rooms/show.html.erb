@@ -1,0 +1,14 @@
+<div data-controller="chat-room" data-chat-room-room-id-value="<%= @chat_room.id %>">
+  <h1><%= @chat_room.title %></h1>
+
+  <%= form_with(model: [@chat_room, Chat.new], local: false, data: { action: "submit->chat-room#send" }) do |f| %>
+    <%= f.text_field :content, id: "message_content" %>
+    <%= f.submit "Send" %>
+  <% end %>
+</div>
+<!--  <div id="messages">-->
+    <%#= render @chat_room.messages %>
+<!--  </div>-->
+
+
+<!--</div>-->

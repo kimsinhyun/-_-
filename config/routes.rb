@@ -24,4 +24,8 @@ Rails.application.routes.draw do
   root "hellos#index"
   # Defines the root path route ("/")
   # root "posts#index"
+
+  resources :chat_rooms, only: %i[index show] do
+    resources :chats, only: %i[create]
+  end
 end

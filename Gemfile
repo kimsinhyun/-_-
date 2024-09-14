@@ -57,6 +57,9 @@ gem 'redis-session-store',"~> 0.11.5"
 
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
 
+gem "view_component", "~> 3.14"
+
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
@@ -68,6 +71,15 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem 'rubocop', '~> 1.54', '>= 1.54.1'
+  gem 'rubocop-performance', '~> 1.18'
+  gem 'rubocop-rails', '~> 2.20', '>= 2.20.2'
+  gem 'rubocop-rspec', '~> 2.22'
+
+  gem 'factory_bot_rails', '~> 6.2'
+  gem 'faker', '~> 3.2'
+  gem 'rspec-rails', '~> 6.1'
 end
 
 group :development do
@@ -80,5 +92,4 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
-
 
