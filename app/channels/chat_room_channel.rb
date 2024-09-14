@@ -7,7 +7,8 @@ class ChatRoomChannel < Turbo::StreamsChannel
       chat_room = ChatRoom.find(params[:chat_room_id])
       chat_room.user_count += 1
       chat_room.save!
-      # broadcast_user_count(chat_room)
+    else
+      reject
     end
   end
 

@@ -32,7 +32,10 @@ gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "bootsnap", require: false
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+gem "image_processing", "~> 1.2"
+
+# Default avatar
+gem "letter_avatar", "~> 0.3.9"
 
 # database
 gem "pg", "~> 1.5", ">= 1.5.8"
@@ -41,21 +44,21 @@ gem "pg", "~> 1.5", ">= 1.5.8"
 gem "tailwindcss-rails", "~> 2.7"
 
 # localization
-gem 'rails-i18n', '~> 7.0.0'
+gem "rails-i18n", "~> 7.0.0"
 
 # authentication
 gem "devise", "~> 4.9", ">= 4.9.4"
-gem 'devise-i18n', '~> 1.12', '>= 1.12.1'
+gem "devise-i18n", "~> 1.12", ">= 1.12.1"
 gem "omniauth", "~> 2.1", ">= 2.1.1"
 gem "omniauth-google-oauth2", "~> 1.1", ">= 1.1.1"
 gem "omniauth-rails_csrf_protection", "~> 1.0", ">= 1.0.2"
 
 # redis
-gem 'redis', '>= 4.0.1'
-gem 'redis-rails', '~> 5.0', '>= 5.0.2'
-gem 'redis-session-store',"~> 0.11.5"
+gem "redis", ">= 4.0.1"
+gem "redis-rails", "~> 5.0", ">= 5.0.2"
+gem "redis-session-store","~> 0.11.5"
 
-gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.8'
+gem "font-awesome-rails", "~> 4.7", ">= 4.7.0.8"
 
 gem "view_component", "~> 3.14"
 
@@ -76,14 +79,14 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 
-  gem 'rubocop', '~> 1.54', '>= 1.54.1'
-  gem 'rubocop-performance', '~> 1.18'
-  gem 'rubocop-rails', '~> 2.20', '>= 2.20.2'
-  gem 'rubocop-rspec', '~> 2.22'
+  gem "rubocop", "~> 1.54", ">= 1.54.1"
+  gem "rubocop-performance", "~> 1.18"
+  gem "rubocop-rails", "~> 2.20", ">= 2.20.2"
+  gem "rubocop-rspec", "~> 2.22"
 
-  gem 'factory_bot_rails', '~> 6.2'
-  gem 'faker', '~> 3.2'
-  gem 'rspec-rails', '~> 6.1'
+  gem "factory_bot_rails", "~> 6.2"
+  gem "faker", "~> 3.2"
+  gem "rspec-rails", "~> 6.1"
 end
 
 group :development do

@@ -1,4 +1,39 @@
-<div class="chat">
-  <strong><%= chat.user.email %>:</strong>
-  <%= chat.content %>
+<div class="flex items-start gap-2.5 p-3">
+
+  <%= image_tag chat.user.profile_image, class: "w-8 h-8 rounded-full" %>
+  <div class="flex flex-col w-full max-w-[320px] leading-1.5 p-4 border-gray-200 bg-gray-100 rounded-e-xl rounded-es-xl dark:bg-gray-700">
+    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+      <span class="text-sm font-semibold text-gray-900 dark:text-white">
+        <%= chat.user.nickname %>
+      </span>
+      <span class="text-sm font-normal text-gray-500 dark:text-gray-400">
+        <%= I18n.l(chat.created_at, format: :short) %>
+      </span>
+    </div>
+    <p class="text-sm font-normal py-2.5 text-gray-900 dark:text-white">
+      <%= chat.content %>
+    </p>
+  </div>
+  <button id="dropdownHoverButton" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">Dropdown hover <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+  </svg>
+  </button>
+
+  <!-- Dropdown menu -->
+  <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+    <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+      </li>
+      <li>
+        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+      </li>
+    </ul>
+  </div>
 </div>

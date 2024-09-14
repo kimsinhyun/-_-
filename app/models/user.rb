@@ -7,8 +7,14 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2],
          authentication_keys: [:username]
 
+  has_one_attached :profile_image
+
 
   validates :email, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
+  validates :nickname, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
+
+  before_create :set_nickname
+
 
   def self.from_omniauth(access_token, provider: "google")
     data = access_token.info
@@ -20,5 +26,11 @@ class User < ApplicationRecord
       provider:,
     )
     user
+  end
+
+  private
+
+  def set_nickname
+    self.nickname = SecureRandom.hex(5).to_s
   end
 end

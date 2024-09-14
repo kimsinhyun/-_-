@@ -3,27 +3,9 @@
 
 <%= turbo_stream_from "chat_room_#{@chat_room.id}", channel: "ChatRoomChannel", data: { chat_room_id: @chat_room.id } %>
 
-<div id="chats">
+<div id="chats" data-controller="chat-room">
   <%= render @chat_room.chats %>
 </div>
 
-<%= form_with(
-      model: [@chat_room, Chat.new],
-      local: false,
-      method: :post,
-      data: {
-        controller: "chat-room",
-        chat_room_target: "form",
-        action: "submit->chat-room#submit"
-      }) do |f| %>
-  <%= f.text_field :content,
-                   id: "chat_content",
-                   placeholder: "Type a message...",
-                   class: "form-control",
-                   data: {
-                     chat_room_target: "input",
-                     action: "input->chat-room#validateInput"
-                   } %>
-  <%= f.submit "Send", data: { chat_room_target: "submit" } %>
-<% end %>
+<%= render "chat_rooms/form", chat: @chat %>
 <!--</div>-->

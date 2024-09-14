@@ -9,3 +9,5 @@ pin "@fortawesome/fontawesome-free", to: "@fortawesome--fontawesome-free.js" # @
 
 pin "@rails/actioncable", to: "@rails--actioncable.js" # @7.2.100
 pin_all_from "app/javascript/channels", under: "channels"
+
+# pin "flowbite", to: "https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.turbo.min.js"
