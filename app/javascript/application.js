@@ -5,3 +5,9 @@ import "controllers"
 import "@fortawesome/fontawesome-free"
 // import "@fortawesome/fontawesome-free/js/all";
 
+import Alpine from "alpinejs"
+window.Alpine = Alpine
+
+document.addEventListener("DOMContentLoaded", function(event) {
+    window.Alpine.start();
+});
