@@ -3,20 +3,8 @@
 
 <%= turbo_stream_from "chat_room_#{@chat_room.id}", channel: "ChatRoomChannel", data: { chat_room_id: @chat_room.id } %>
 
-
-<%= turbo_frame_tag :pagination,
-                    loading: :lazy,
-                    src: chat_room_chats_path(@chat_room.id, format: :turbo_stream)
-%>
-
-<!--<div id="chats" data-controller="chat-room">-->
-<%#= render @chat_room.chats %>
-<!--</div>-->
-
-<%#= turbo_frame_tag :chats do %>
-  <%#= render @chat_room.chats %>
-<%# end %>
-
-
+<%= turbo_frame_tag :chats do %>
+  <%= render @chat_room.chats %>
+<% end %>
 
 <%= render "chat_rooms/form", chat: @chat %>

@@ -1,5 +1,5 @@
 <div id="<%= dom_id(chat_room) %>">
-  <%= link_to "#{chat_room.id}  #{chat_room.title}", chat_room_path(chat_room.id) %>
+  <%= link_to "#{chat_room.id}  #{chat_room.title}", chat_room_path(chat_room), data: { turbo: false } %>
 
   <!-- 기타 채팅방 정보 -->
 </div>
