@@ -37,7 +37,7 @@
       <span class="separator-text">소셜 계정으로 간편 로그인</span>
     </div>
 
-    <%= button_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'google-icon-btn' do %>
+    <%= button_to user_google_oauth2_omniauth_authorize_path, method: :post, class: 'google-icon-btn', :data => {turbo: "false"} do %>
       <%= fa_icon "google" %>
     <% end %>
     <%#= image_tag 'kakao-icon.png', class: 'login-logo' %>

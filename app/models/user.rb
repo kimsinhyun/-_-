@@ -14,6 +14,7 @@ class User < ApplicationRecord
   validates :nickname, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
 
   before_create :set_nickname
+  after_create_commit :generate_letter_avatar
 
 
   def self.from_omniauth(access_token, provider: "google")
@@ -31,6 +32,12 @@ class User < ApplicationRecord
   private
 
   def set_nickname
-    self.nickname = SecureRandom.hex(5).to_s
+    self.nickname = "User-#{SecureRandom.hex(5).to_s}"
+  end
+
+  def generate_letter_avatar
+    return if profile_image.attached?
+
+    LetterAvatarGenerateWorker.perform_async(id)
   end
 end

@@ -1,10 +1,12 @@
-<!--<div data-controller="chat-room" data-chat-room-room-id-value="<%#= @chat_room.id %>">-->
-<h1><%= @chat_room.title %></h1>
-
+<h1 class="p-4"><%= @chat_room.title %></h1>
 <%= turbo_stream_from "chat_room_#{@chat_room.id}", channel: "ChatRoomChannel", data: { chat_room_id: @chat_room.id } %>
-
-<%= turbo_frame_tag :chats do %>
-  <%= render @chat_room.chats %>
-<% end %>
+<div class="mb-20 overflow-y-auto max-h-[80vh]"
+     data-controller="chat"
+      data-chat-current-user-id-value="<%= current_user.id %>">
+>
+     <%= turbo_frame_tag :chats do %>
+       <%= render partial: "chats/chat", collection: @chats %>
+  <% end %>
+</div>
 
 <%= render "chat_rooms/form", chat: @chat %>

@@ -13,9 +13,11 @@ class ChatRoomsController < ApplicationController
   def show
     # @chat_room = ChatRoom.includes(chats: { user: { profile_image_attachment: :blob } }).find(params[:id])
     @chat_room = ChatRoom.find(params[:id])
-    @pagy, @chats = pagy_countless(@chat_room.chats
-                       .includes(user: { profile_image_attachment: :blob })
-                       .order(id: :desc), items: 20)
+    @chats = @chat_room.chats.includes(user: { profile_image_attachment: :blob }).order(id: :asc)
+    # @pagy, @chats = pagy_countless(@chat_room.chats
+    #                                          .includes(user: { profile_image_attachment: :blob })
+    #                                          .order(id: :asc),
+    #                                items: 20)
 
     respond_to do |format|
       format.html

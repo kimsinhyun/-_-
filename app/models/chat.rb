@@ -11,7 +11,7 @@ class Chat < ApplicationRecord
 
 
   def broadcast_create
-    # ChatBroadcastWorker.new.perform(self.id)
-    ChatBroadcastWorker.perform_async(self.id)
+    ChatBroadcastWorker.new.perform(self.id)
+    # ChatBroadcastWorker.perform_async(self.id)
   end
 end
