@@ -1,0 +1,13 @@
+<%= turbo_stream.replace :pagination do %>
+  <h2><%= @pagy.next %></h2>
+  <% if @pagy.next.present? %>
+    <%= turbo_frame_tag :pagination,
+                        loading: :lazy,
+                        src: chat_rooms_path(format: :turbo_stream, page: @pagy.next)%>
+  <% end %>
+<% end %>
+
+<%= turbo_stream.append :chat_rooms do %>
+  <%= render @chat_rooms %>
+<% end %>
+

@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
+
   before_action do
     if Rails.env.development? || Rails.env.test?
       ActiveStorage::Current.url_options = { protocol: request.protocol, host: request.host, port: request.port }

@@ -66,6 +66,9 @@ gem "sidekiq", "~> 7.3"
 gem "sidekiq-cron", "~> 1.12"
 gem "sidekiq-unique-jobs", "~> 8.0", ">= 8.0.2"
 
+# pagination
+gem 'pagy', '~> 9.0', '>= 9.0.9'
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
