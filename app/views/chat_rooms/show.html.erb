@@ -3,7 +3,7 @@
 <div class="mb-20 overflow-y-auto max-h-[80vh]"
      data-controller="chat"
       data-chat-current-user-id-value="<%= current_user.id %>">
->
+
      <%= turbo_frame_tag :chats do %>
        <%= render partial: "chats/chat", collection: @chats %>
   <% end %>
