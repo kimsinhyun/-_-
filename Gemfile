@@ -104,7 +104,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 
-  gem "rspec-sidekiq", "~> 4.1"
+  gem "rspec-sidekiq", "~> 5.0"
 end
 
 gem "devise-async", "~> 1.0"
