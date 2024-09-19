@@ -128,10 +128,11 @@ GEM
       railties (>= 5.0.0)
     faker (3.4.2)
       i18n (>= 1.8.11, < 2)
-    faraday (2.10.0)
-      faraday-net_http (>= 2.0, < 3.2)
+    faraday (2.12.0)
+      faraday-net_http (>= 2.0, < 3.4)
+      json
       logger
-    faraday-net_http (3.1.0)
+    faraday-net_http (3.3.0)
       net-http
     ffi (1.17.0)
     ffi (1.17.0-aarch64-linux-gnu)
@@ -161,7 +162,7 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.7.2)
-    jwt (2.8.2)
+    jwt (2.9.0)
       base64
     language_server-protocol (3.17.0.3)
     launchy (3.0.1)
@@ -219,8 +220,8 @@ GEM
       hashie (>= 3.4.6)
       rack (>= 2.2.3)
       rack-protection
-    omniauth-google-oauth2 (1.1.2)
-      jwt (>= 2.0)
+    omniauth-google-oauth2 (1.2.0)
+      jwt (>= 2.9)
       oauth2 (~> 2.0)
       omniauth (~> 2.0)
       omniauth-oauth2 (~> 1.8)
@@ -440,7 +441,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.5.0)
-    uri (0.13.0)
+    uri (0.13.1)
     useragent (0.16.10)
     version_gem (1.1.4)
     view_component (3.14.0)
@@ -486,7 +487,7 @@ DEPENDENCIES
   letter_avatar (~> 0.3.9)
   letter_opener (~> 1.10)
   omniauth (~> 2.1, >= 2.1.1)
-  omniauth-google-oauth2 (~> 1.1, >= 1.1.1)
+  omniauth-google-oauth2 (~> 1.2)
   omniauth-rails_csrf_protection (~> 1.0, >= 1.0.2)
   pagy (~> 9.0, >= 9.0.9)
   pg (~> 1.5, >= 1.5.8)
