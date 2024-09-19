@@ -2,13 +2,12 @@
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable,
+         :registerable, :confirmable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:google_oauth2],
-         authentication_keys: [:username]
+         :omniauthable, omniauth_providers: [:google_oauth2]
 
   has_one_attached :profile_image
-
 
   validates :email, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
   validates :nickname, uniqueness: { case_sensitive: false }, allow_nil: true, allow_blank: true
@@ -16,17 +15,20 @@ class User < ApplicationRecord
   before_create :set_nickname
   after_create_commit :generate_letter_avatar
 
-
   def self.from_omniauth(access_token, provider: "google")
     data = access_token.info
-    user = User.find_by(email: data["email"])
-
-    user ||= User.create!(
-      email: data["email"],
-      password: Devise.friendly_token[0, 20],
-      provider:,
-    )
-    user
+    if (user = User.where(email: data["email"]).first)
+      user
+    else
+      user = User.new(
+        email: data.email,
+        password: Devise.friendly_token[0, 20],
+        provider:,
+        confirmed_at: Time.zone.now
+      )
+      user.save!
+      user
+    end
   end
 
   private
