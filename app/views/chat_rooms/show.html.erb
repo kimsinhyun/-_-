@@ -1,6 +1,6 @@
 <h1 class="p-4"><%= @chat_room.title %></h1>
 <%= turbo_stream_from "chat_room_#{@chat_room.id}", channel: "ChatRoomChannel", data: { chat_room_id: @chat_room.id } %>
-<div class="mb-20 overflow-y-auto max-h-[80vh]"
+<div class="mb-18 overflow-y-auto max-h-[85vh]"
      data-controller="chat"
       data-chat-current-user-id-value="<%= current_user.id %>">
 

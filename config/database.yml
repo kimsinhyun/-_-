@@ -8,18 +8,20 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  host: 127.0.0.1
+#  host: 127.0.0.1
   port: 5432
 
 development:
   <<: *default
   database: proj1_development
+  host: <%= ENV.fetch("DEVELOPMENT_DATABASE_HOST", " host.docker.internal") %>
   username: <%= ENV["DEVELOPMENT_DATABASE_USERNAME"] %>
   password: <%= ENV["DEVELOPMENT_DATABASE_PASSWORD"] %>
 
 staging:
   <<: *default
   database: proj1_staging
+  host: <%= ENV["STAGING_DATABASE_HOST"] %>
   username: <%= ENV["STAGING_DATABASE_USERNAME"] %>
   password: <%= ENV["STAGING_DATABASE_PASSWORD"] %>
 
@@ -30,6 +32,7 @@ staging:
 test:
   <<: *default
   database: proj1_test
+  host: <%= ENV["DEVELOPMENT_DATABASE_HOST"] %>
   username: <%= ENV["DEVELOPMENT_DATABASE_USERNAME"] %>
   password: <%= ENV["DEVELOPMENT_DATABASE_PASSWORD"] %>
 
